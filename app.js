@@ -30,14 +30,14 @@ app.use(morgan("dev"));
 // routes
 
 app.get("/", (req, res) => {
-  res.redirect("/blogs");
+  res.redirect("/");
 });
 app.get("/about", (req, res) => {
   res.render("about", { title: "About" });
 });
 
 // Blog routes
-app.use("/blogs/", blogRoutes);
+app.use("/", blogRoutes);
 
 // 404 page
 app.use((req, res) => {
