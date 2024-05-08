@@ -12,7 +12,7 @@ mongoose
   .connect(process.env.URI)
   .then((result) => {
     // listen for requests
-    app.listen(3000);
+    app.listen(3000, "0.0.0.0");
   })
   .catch((err) => {
     console.log(err);
@@ -22,7 +22,7 @@ mongoose
 app.set("view engine", "ejs");
 
 // middleware & static files
-app.use(express.static("public"));
+app.use(express.static("./public"));
 app.use(express.urlencoded({ extended: true }));
 app.use(morgan("dev"));
 
